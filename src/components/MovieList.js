@@ -1,12 +1,11 @@
 import MovieCard from "./MovieCard";
+import "./MovieList.css";
 
 const MovieList = (props) => {
   return (
-    <div>
+    <div className="fixFlow">
       {props.movies.map((movie, index) => (
-        <div>
-          <MovieCard movie={movie} key={index} />
-        </div>
+        <MovieCard key={index} movie={movie} />
       ))}
     </div>
   );

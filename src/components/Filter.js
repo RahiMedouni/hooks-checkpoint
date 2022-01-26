@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, FormControl } from "react-bootstrap";
 import ReactStars from "react-rating-stars-component";
-
+import { Link } from "react-router-dom";
 const Filter = ({ title, handleChange, rate, ratingChanged }) => {
   return (
     <div>
@@ -10,9 +10,11 @@ const Filter = ({ title, handleChange, rate, ratingChanged }) => {
         variant="light"
         className="d-flex justify-content-around"
       >
-        <Navbar.Brand href="#home">
-          Hooks and Router Checkpoints...
-        </Navbar.Brand>
+        <Link to="/">
+          <Navbar.Brand href="#home">
+            Hooks and Router Checkpoints...
+          </Navbar.Brand>
+        </Link>
         <div className="related_links">
           <ul className="menu"></ul>
         </div>

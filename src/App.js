@@ -4,17 +4,61 @@ import "./App.css";
 import MovieList from "./components/MovieList";
 import AddMovie from "./components/AddMovie";
 import Filter from "./components/Filter";
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import Details from "./components/Details";
+import { Routes, Route, useParams } from "react-router-dom";
 
-// const Movie = (props) =>{
+const MDetails = (props) => {
+  let params = useParams();
 
-//   let params = useParams();
-
-//   return <h1>movie title : {params.id} </h1>
-// }
+  return (
+    <div>
+      <Details params={params} movies={props.movies} />
+    </div>
+  );
+};
 
 function App() {
   const [movies, setMovies] = useState([
+    {
+      id: Math.random(),
+      title: "Star Wars: Episode IV - A New Hope",
+      posterUrl:
+        "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      rate: 5,
+      description:
+        "A gangster family epic set in 1900s England, centering on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby.",
+      trailer: "https://www.youtube.com/embed/oVzVdvGIC7U",
+    },
+    {
+      id: Math.random(),
+      title: "Star Wars: Episode V - The Empire Strikes Back",
+      posterUrl:
+        "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      rate: 5,
+      description:
+        "A gangster family epic set in 1900s England, centering on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby.",
+      trailer: "https://www.youtube.com/embed/oVzVdvGIC7U",
+    },
+    {
+      id: Math.random(),
+      title: "Star Wars: Episode VI - Return of the Jedi",
+      posterUrl:
+        "https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+      rate: 5,
+      description:
+        "A gangster family epic set in 1900s England, centering on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby.",
+      trailer: "https://www.youtube.com/embed/oVzVdvGIC7U",
+    },
+    {
+      id: Math.random(),
+      title: "Star Wars: Episode VII - The Force Awakens",
+      posterUrl:
+        "https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg",
+      rate: 5,
+      description:
+        "A gangster family epic set in 1900s England, centering on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby.",
+      trailer: "https://www.youtube.com/embed/oVzVdvGIC7U",
+    },
     {
       id: Math.random(),
       title: "peaky blinders",
@@ -42,6 +86,16 @@ function App() {
       description:
         "Shaun Murphy, a young surgeon with autism and Savant syndrome, is recruited into the surgical unit of a prestigious hospital.",
       trailer: "https://www.youtube.com/embed/msJggy8xtmI",
+    },
+    {
+      id: Math.random(),
+      title: "Star Wars: Episode - The Empire Strikes Back",
+      posterUrl:
+        "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      rate: 5,
+      description:
+        "A gangster family epic set in 1900s England, centering on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby.",
+      trailer: "https://www.youtube.com/embed/oVzVdvGIC7U",
     },
   ]);
   const [title, setTitle] = useState("");
@@ -85,16 +139,13 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<MoviesList />} />
-        <Route path="/movie/:id" element={<Movie movie={movies} />} />
+        <Route
+          path="/movielist/:title"
+          element={<MDetails movies={movies} />}
+        />
       </Routes>
     </div>
   );
 }
 
 export default App;
-
-// We will add a description and the trailer link (embed video link) to the object movie.
-
-// Every time I click on a movie card, it will take me to the movie description and trailer page.
-
-// In the description page, I can navigate back to the home page.
