@@ -7,7 +7,7 @@ const MovieCard = (props) => {
   return (
     <Card
       style={{
-        maxWidth: 300,
+        width: 400,
         color: "black",
         background: "rgb(0,89,255,0.5)",
         margin: 5,
@@ -28,7 +28,7 @@ const MovieCard = (props) => {
             ishalf={true}
             size={24}
             activeColor="#ffd700"
-            value={props.movie.rate.toFixed(1)}
+            value={props.movie.rate}
           />
         </Card.Text>
         <Link to={"/movielist/" + props.movie.title}>

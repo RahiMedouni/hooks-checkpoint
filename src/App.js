@@ -87,16 +87,6 @@ function App() {
         "Shaun Murphy, a young surgeon with autism and Savant syndrome, is recruited into the surgical unit of a prestigious hospital.",
       trailer: "https://www.youtube.com/embed/msJggy8xtmI",
     },
-    {
-      id: Math.random(),
-      title: "Star Wars: Episode - The Empire Strikes Back",
-      posterUrl:
-        "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-      rate: 5,
-      description:
-        "A gangster family epic set in 1900s England, centering on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby.",
-      trailer: "https://www.youtube.com/embed/oVzVdvGIC7U",
-    },
   ]);
   const [title, setTitle] = useState("");
 
